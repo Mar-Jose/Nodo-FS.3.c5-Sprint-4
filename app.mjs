@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 // configurar EJS como motor de plantillas  
 app.set('view engine', 'ejs');
-app.set('views', path.join(import.meta.dirname, 'views'));
+app.set('views', path.join(import.meta.dirname, 'ejs.layout', 'views'));
 // configurar express-ejs-layouts.
 app.use(expressLayouts);
 app.set('layout', 'layout'); // archivo base de layout
@@ -18,7 +18,7 @@ app.use(express.static(path.join(import.meta.dirname, 'public')));
 app.get('/', (req, res) => {
     res.render('index', { 
         title: 'Página Principal',
-    navbarlinks: [
+    navbarLinks: [
     { text: 'Inicio', href: '/', icon: '/icons/home.svg' },
     { text: 'Acerca de', href: '/about', icon: '/icons/info.svg' },
     { text: 'Contacto', href: '/contact', icon: '/icons/contact.svg' }
